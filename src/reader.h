@@ -19,6 +19,13 @@ public:
     explicit Reader(QObject *parent = 0);
     ~Reader();
     Q_INVOKABLE void getRSS();
+
+    struct Quote {
+        quint32 Number;     // Номер цитаты
+        QString Timestamp;  // Временной штамп
+        QString Text;       // Текст цитаты
+    };
+
 private:
     QNetworkAccessManager* _access_manager;
     QStringList data;

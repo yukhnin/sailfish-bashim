@@ -57,21 +57,29 @@ Page {
                 Row {
                     id: topRow
                     width: parent.width
-                    spacing: Theme.paddingMedium
-                    Label {
-                        id: label_quote_num
-                        width: parent.width - Theme.itemSizeMedium //- Theme.itemSizeMedium -topRow.spacing
-                        //verticalAlignment: Text.AlignVCenter
-                        //horizontalAlignment: Text.AlignRight
-                        font.bold: true
-                        text: "Цитата № [не реализовано]";
-                    }
+                    spacing: Theme.paddingSmall
                     IconButton {
                         id: btnFavorite
-                        width: Theme.itemSizeMedium
+                        width: Theme.itemSizeExtraSmall
                         height: label_quote_num.height
                         icon.source: "image://theme/icon-s-favorite"
                         //onClicked: reader.save()
+                    }
+                    Label {
+                        id: label_quote_num
+                        width: parent.width - btnCopy.width - btnFavorite.width
+                        //verticalAlignment: Text.AlignVCenter
+                        //horizontalAlignment: Text.AlignRight
+                        font.bold: true
+                        text: "Цитата № [ --- ]";
+                    }
+
+                    IconButton {
+                        id: btnCopy
+                        width: Theme.itemSizeExtraSmall
+                        height: label_quote_num.height
+                        icon.source: "image://theme/icon-s-clipboard"
+                        onClicked: Clipboard.text = label_quote.text
                     }
                 }
 

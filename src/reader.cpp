@@ -44,7 +44,6 @@ void Reader::gotRss(QNetworkReply *pReply)
 
             }
         }
-
     }
     emit buildModel(QVariant::fromValue(data));
     //delete codec;

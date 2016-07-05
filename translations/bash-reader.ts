@@ -30,11 +30,11 @@
 <context>
     <name>SecondPage</name>
     <message>
-        <source>Nested Page</source>
+        <source>О программе</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Item</source>
+        <source>Неофициальный клиент для просмотра сайта bash.im (бывшего bash.org.ru)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

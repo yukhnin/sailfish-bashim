@@ -41,9 +41,7 @@ CoverBackground {
     CoverActionList {
         id: coverAction
 
-        CoverAction {
-            iconSource: "image://theme/icon-cover-next"
-        }
+
     }
 }
 

@@ -33,7 +33,7 @@ void Reader::gotRss(QNetworkReply *pReply)
     QString sResponse = codec->toUnicode(pReply->readAll());
     QXmlStreamReader xmlReader(sResponse);
 
-
+    xmlReader.readNext();
     while (!xmlReader.atEnd()) {
         xmlReader.readNext();
         if (xmlReader.tokenType() == QXmlStreamReader::StartElement) {

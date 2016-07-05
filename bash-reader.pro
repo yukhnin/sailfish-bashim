@@ -40,5 +40,5 @@ CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/bash-reader-de.ts
 
 HEADERS += \
-    reader.h
+    src/reader.h
 

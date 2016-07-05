@@ -47,8 +47,52 @@ Page {
 
         delegate: BackgroundItem {
             width: parent.width
-            height: label_quote.height + Theme.paddingLarge + separator_quotes.height
+            height: label_quote.height + topRow.height + Theme.paddingLarge +Theme.paddingLarge + separator_quotes.height
 
+            Column {
+                anchors.fill: parent
+                anchors.margins: Theme.horizontalPageMargin
+                spacing: Theme.paddingLarge
+
+                Row {
+                    id: topRow
+                    width: parent.width
+                    spacing: Theme.paddingLarge
+                    Label {
+                        id: label_quote_num
+                        width: parent.width - Theme.itemSizeMedium - topRow.spacing
+                        //verticalAlignment: Text.AlignVCenter
+                        //horizontalAlignment: Text.AlignRight
+                        font.bold: true
+                        text: "Цитата №";
+
+
+                    }
+                }
+                Label {
+                    id: label_quote
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.leftMargin: Theme.horizontalPageMargin
+                    anchors.rightMargin: Theme.horizontalPageMargin
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.WordWrap
+                    text: modelData
+                }
+                Separator {
+                    id: separator_quotes
+                    //anchors.verticalCenter: verticalCenter
+                    //anchors.bottom: parent.bottom
+
+                    horizontalAlignment: Text.AlignHCenter
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.leftMargin: Theme.paddingLarge
+                    anchors.rightMargin: Theme.paddingLarge
+                    color: Theme.secondaryHighlightColor
+                }
+            }
+            /*
             Label {
                 id: label_quote
                 anchors.left: parent.left
@@ -71,6 +115,7 @@ Page {
                 anchors.rightMargin: Theme.paddingLarge
                 color: Theme.secondaryHighlightColor
             }
+            */
         }
         VerticalScrollDecorator {
 

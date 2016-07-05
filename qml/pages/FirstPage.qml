@@ -57,18 +57,28 @@ Page {
                 Row {
                     id: topRow
                     width: parent.width
-                    spacing: Theme.paddingLarge
+                    spacing: Theme.paddingMedium
                     Label {
                         id: label_quote_num
-                        width: parent.width - Theme.itemSizeMedium - topRow.spacing
+                        width: parent.width - Theme.itemSizeMedium //- Theme.itemSizeMedium -topRow.spacing
                         //verticalAlignment: Text.AlignVCenter
                         //horizontalAlignment: Text.AlignRight
                         font.bold: true
-                        text: "Цитата №";
-
-
+                        text: "Цитата № [не реализовано]";
+                    }
+                    IconButton {
+                        id: btnFavorite
+                        width: Theme.itemSizeMedium
+                        height: label_quote_num.height
+                        icon.source: "image://theme/icon-s-favorite"
+                        //onClicked: reader.save()
                     }
                 }
+
+
+
+
+
                 Label {
                     id: label_quote
                     anchors.left: parent.left
@@ -92,30 +102,6 @@ Page {
                     color: Theme.secondaryHighlightColor
                 }
             }
-            /*
-            Label {
-                id: label_quote
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.leftMargin: Theme.horizontalPageMargin
-                anchors.rightMargin: Theme.horizontalPageMargin
-                verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.WordWrap
-                text: modelData
-            }
-            Separator {
-                id: separator_quotes
-                //anchors.verticalCenter: verticalCenter
-                //anchors.bottom: parent.bottom
-
-                horizontalAlignment: Text.AlignHCenter
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.leftMargin: Theme.paddingLarge
-                anchors.rightMargin: Theme.paddingLarge
-                color: Theme.secondaryHighlightColor
-            }
-            */
         }
         VerticalScrollDecorator {
 

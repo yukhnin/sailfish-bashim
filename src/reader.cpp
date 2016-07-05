@@ -32,14 +32,16 @@ void Reader::gotRss(QNetworkReply *pReply)
     QTextCodec *codec = QTextCodec::codecForName("Windows-1251");
     QString sResponse = codec->toUnicode(pReply->readAll());
     QXmlStreamReader xmlReader(sResponse);
-
-    xmlReader.readNext();
+    quint16 iCounter = 0;
     while (!xmlReader.atEnd()) {
         xmlReader.readNext();
         if (xmlReader.tokenType() == QXmlStreamReader::StartElement) {
             if (xmlReader.name() == "description") {
+                iCounter++;
+                if (iCounter == 1) continue;
                 xmlReader.readNext();
                 data.append(xmlReader.text().toString());
+
             }
         }
 

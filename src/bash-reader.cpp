@@ -44,17 +44,6 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty("reader", reader.data());
     view->setSource(SailfishApp::pathTo("qml/bash-reader.qml"));
     view->show();
-
-
-    // SailfishApp::main() will display "qml/template.qml", if you need more
-    // control over initialization, you can use:
-    //
-    //   - SailfishApp::application(int, char *[]) to get the QGuiApplication *
-    //   - SailfishApp::createView() to get a new QQuickView * instance
-    //   - SailfishApp::pathTo(QString) to get a QUrl to a resource file
-    //
-    // To display the view, call "show()" (will show fullscreen on device).
-
     // запускаем приложение
     return application->exec();
 }
